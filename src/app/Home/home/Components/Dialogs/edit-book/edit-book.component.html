@@ -1,0 +1,21 @@
+<div>
+    <form (submit)="onSave()">
+        <mat-form-field appearance="standard">
+            <mat-label style="font-size: 13px;">Book Name</mat-label>
+            <input matInput  name="name" [(ngModel)]="selectedItem.name">
+        </mat-form-field><br>
+        <mat-form-field appearance="standard">
+            <mat-label style="font-size: 13px;">Book Price</mat-label>
+            <input matInput  name="price" [(ngModel)]="selectedItem.price">
+        </mat-form-field><br>
+        <mat-form-field appearance="standard">
+            <mat-label style="font-size: 13px;">Book Description</mat-label>
+            <input matInput  name="description" [(ngModel)]="selectedItem.description">
+        </mat-form-field><br>
+        <mat-form-field appearance="standard">
+            <mat-label style="font-size: 13px;">Book Category</mat-label>
+            <input matInput  name="category" [(ngModel)]="selectedItem.category">
+        </mat-form-field><br>
+        <button type="submit" mat-raised-button color="primary">save</button>
+    </form>
+</div>

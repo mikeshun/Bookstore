@@ -1,0 +1,88 @@
+
+
+<button (click)="showAddDialog()" class="btn btn-primary" style="border-radius: 40px;margin: 10px;">Add Book</button>
+<dx-data-grid id="gridContainer" [dataSource]="Books" [selectionFilter]="['Active']" [showBorders]="true"
+[columnAutoWidth]="true" [allowColumnResizing]="true" style="height: 80%; padding:20px">
+
+
+
+<dxo-export [enabled]="true" fileName="dashboard" [allowExportSelectedData]="true">
+</dxo-export>
+<dxo-filter-row [visible]="true"></dxo-filter-row>
+<dxo-header-filter [visible]="true"></dxo-header-filter>
+<dxo-group-panel [visible]="true"></dxo-group-panel>
+<dxo-paging [pageSize]="10"></dxo-paging>
+<dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[5, 10, 20]" [showInfo]="true">
+</dxo-pager>
+
+
+<dxi-column dataField="name" caption="Book Name"></dxi-column>
+<dxi-column dataField="price" caption="Book Price"></dxi-column>
+<dxi-column dataField="description" caption="Book Description"></dxi-column>
+<dxi-column dataField="category" caption="Book Category"></dxi-column>
+
+
+
+
+<dxi-column caption="Action" cellTemplate="zonecellTemplate">
+</dxi-column>
+
+<div *dxTemplate="let d of 'zonecellTemplate'">
+    <button (click)="showEditDialog(d.data)" type="submit" mat-raised-button color="accent">Edit</button>
+</div>
+
+
+</dx-data-grid>
+
+<!-- DIALOG -->
+<ng-template #secondDialog>
+    <div>
+        <form (submit)="onSave()">
+            <mat-form-field appearance="standard">
+                <mat-label style="font-size: 13px;">Book Name</mat-label>
+                <input matInput  name="name" [(ngModel)]="item.name">
+            </mat-form-field><br>
+            <mat-form-field appearance="standard">
+                <mat-label style="font-size: 13px;">Book Price</mat-label>
+                <input matInput  name="price" [(ngModel)]="item.price">
+            </mat-form-field><br>
+            <mat-form-field appearance="standard">
+                <mat-label style="font-size: 13px;">Book Description</mat-label>
+                <input matInput  name="description" [(ngModel)]="item.description">
+            </mat-form-field><br>
+            <mat-form-field appearance="standard">
+                <mat-label style="font-size: 13px;">Book Category</mat-label>
+                <input matInput  name="category" [(ngModel)]="item.category">
+            </mat-form-field><br>
+            <button type="submit" mat-raised-button color="primary">save</button>
+        </form>
+    </div>
+  </ng-template>
+
+  <!-- EDIT DIALOG -->
+<ng-template #editDialog>
+    <div>
+        <form (submit)="onSave()">
+            <mat-form-field appearance="standard">
+                <mat-label style="font-size: 13px;">Book Name</mat-label>
+                <input matInput  name="name" [(ngModel)]="myitem.name">
+            </mat-form-field><br>
+            <mat-form-field appearance="standard">
+                <mat-label style="font-size: 13px;">Book Price</mat-label>
+                <input matInput  name="price" [(ngModel)]="myitem.price">
+            </mat-form-field><br>
+            <mat-form-field appearance="standard">
+                <mat-label style="font-size: 13px;">Book Description</mat-label>
+                <input matInput  name="description" [(ngModel)]="myitem.description">
+            </mat-form-field><br>
+            <mat-form-field appearance="standard">
+                <mat-label style="font-size: 13px;">Book Category</mat-label>
+                <input matInput  name="category" [(ngModel)]="myitem.category">
+            </mat-form-field><br>
+            <button type="submit" mat-raised-button color="primary">save</button>
+        </form>
+    </div>
+  </ng-template>
+
+
+

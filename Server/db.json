@@ -1,0 +1,73 @@
+{
+  "books": [
+    {
+      "id": "ghjk123",
+      "name": "Tales of the Wolf",
+      "price": "300gh",
+      "description": "It talks about wolves",
+      "category": "AKan Drama"
+    },
+    {
+      "id": "frfrf",
+      "name": "Boko Noko",
+      "price": "300gh",
+      "description": "It talks about Boko and Noko",
+      "category": "Foreing"
+    },
+    {
+      "id": "ghjvgbbk123",
+      "name": "Donda",
+      "price": "200gh",
+      "description": "It talks about donda",
+      "category": "Foreing"
+    },
+    {
+      "id": "ghjk123",
+      "name": "Boko Noko",
+      "price": "300gh",
+      "description": "It talks about Boko and Noko",
+      "category": "Foreing"
+    },
+    {
+      "id": "ghjk123",
+      "name": "Boko Noko",
+      "price": "300gh",
+      "description": "It talks about Boko and Noko",
+      "category": "Foreing"
+    },
+    {
+      "id": "ghjk123",
+      "name": "Boko Noko",
+      "price": "300gh",
+      "description": "It talks about Boko and Noko",
+      "category": "Foreing"
+    },
+    {
+      "id": "ghjk123",
+      "name": "Boko Noko",
+      "price": "300gh",
+      "description": "It talks about Boko and Noko",
+      "category": "Foreing"
+    },
+    {
+      "name": "ato",
+      "price": "400gh",
+      "description": "best book",
+      "category": "aloo",
+      "id": "OEZ3PyQ"
+    },
+    {
+      "name": "hell",
+      "price": "400gh",
+      "description": "best",
+      "category": "try",
+      "id": "ez2cspd"
+    },
+    {
+      "id": "J4OXN6R"
+    },
+    {
+      "id": "4n2oKBB"
+    }
+  ]
+}
