@@ -1,8 +1,10 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Books } from 'src/app/Models/books.model';
 import { BooksService } from 'src/app/Services/books.service';
 import { EditBookComponent } from '../../Components/Dialogs/edit-book/edit-book.component';
+import { SuccessAlertComponent } from '../../Components/Dialogs/success-alert/success-alert.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +13,9 @@ import { EditBookComponent } from '../../Components/Dialogs/edit-book/edit-book.
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private booksService:BooksService, private dialog:MatDialog) {
+  durationInSeconds = 5;
+
+  constructor(private booksService:BooksService, private dialog:MatDialog,private _snackBar: MatSnackBar) {
     
     this.item = new Books()
     this.myitem = new Books()
@@ -28,6 +32,14 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
 
     this.getBooks();
+
+
+  }
+
+  openSnackBar() {
+    this._snackBar.openFromComponent(SuccessAlertComponent, {
+      duration: this.durationInSeconds * 1000,
+    });
   }
 
   showAddDialog(){
@@ -64,6 +76,7 @@ export class DashboardComponent implements OnInit {
       {
         console.log("this was successful")
         this.dialog.closeAll()
+        this.openSnackBar()
       
       } 
       
@@ -71,6 +84,17 @@ export class DashboardComponent implements OnInit {
      e => {
      },
    )
+  }
+
+  deleteItem(citem:Books){
+    // const Id=""
+    // this.citem.id = Id
+    this.booksService.deleteBook(citem.id).subscribe(
+      p=>{
+        this.openSnackBar()
+        console.log("item was deleted")
+      }
+    )
   }
 
 }

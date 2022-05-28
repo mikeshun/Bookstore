@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { EditBookComponent } from './Components/Dialogs/edit-book/edit-book.component';
+import { SuccessAlertComponent } from './Components/Dialogs/success-alert/success-alert.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -21,7 +23,8 @@ import { EditBookComponent } from './Components/Dialogs/edit-book/edit-book.comp
     TopNavComponent,
     HomeComponent,
     DashboardComponent,
-    EditBookComponent
+    EditBookComponent,
+    SuccessAlertComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +34,8 @@ import { EditBookComponent } from './Components/Dialogs/edit-book/edit-book.comp
     MatDialogModule,
     FormsModule ,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule
    
   ]
 })

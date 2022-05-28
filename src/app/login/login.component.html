@@ -1,0 +1,23 @@
+<div class="login-page-container">
+    <div class="row login-box" >
+        <div class="col" style="margin-left: 90px" >
+            <h2 style="font-weight: bold;color:blue;">Hello...</h2>
+            <p style="margin-top: -10px;"> Please Kindly sign in with your credentials</p>
+            <div >
+                <form >
+                    <mat-form-field appearance="standard">
+                        <mat-label style="font-size: 13px;">Username</mat-label>
+                        <input matInput  name="username"  >
+                    </mat-form-field><br>
+                    <mat-form-field appearance="standard">
+                        <mat-label style="font-size: 13px;">Password</mat-label>
+                        <input matInput  name="password" >
+                    </mat-form-field><br>
+                    <button (click)="onSubmit()" style="border-radius: 20px; width:200px" type="button" class="btn btn-primary">Save</button>
+
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>

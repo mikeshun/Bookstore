@@ -32,17 +32,27 @@ export class BooksService {
     return items$;
   }
 
-  editBook(item:Books): Observable<Books>{
+  editBook(id:string, item:Books): Observable<Books>{
 
     let body = JSON.stringify(item);
-    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    let options = { headers: headers };
+    let headers = new HttpHeaders({'Content-Type':'application/json'});
+    let options = {headers:headers}
     let items$ = this.http 
-    .put<Books>(this.BaseUrl,body,options).pipe(
+    .put<Books>("http://localhost:9000/books" + `/${id}`,body,options).pipe(
     catchError(handleError));
     return items$;
-
     }
+
+    deleteBook(id:string): Observable<Books>{
+
+      // let body = JSON.stringify(item);
+      // let headers = new HttpHeaders({'Content-Type':'application/json'});
+      // let options = {headers:headers}
+      let items$ = this.http 
+      .delete<Books>("http://localhost:9000/books" + `/${id}`).pipe(
+      catchError(handleError));
+      return items$;
+      }
 
 }
 

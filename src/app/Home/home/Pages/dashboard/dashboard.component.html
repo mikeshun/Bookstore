@@ -28,7 +28,8 @@
 </dxi-column>
 
 <div *dxTemplate="let d of 'zonecellTemplate'">
-    <button (click)="showEditDialog(d.data)" type="submit" mat-raised-button color="accent">Edit</button>
+    <button style="margin-right: 10px;" id="my-btn" (click)="showEditDialog(d.data)" type="submit" mat-raised-button color="primary">Edit</button>
+    <button id="my-btn" (click)="deleteItem(d.data)" type="submit" mat-raised-button color="warn">Delete</button>
 </div>
 
 
